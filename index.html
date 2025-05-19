@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlavorFiesta</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      background: #0e0e0e;
+      color: #f8f8f2;
+      line-height: 1.6;
+    }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 3rem;
+      position: relative;
+    }
+    .logo { font-size: 1.8rem; font-weight: bold; }
+    .nav-links {
+      display: flex; gap: 2rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: #ff9900; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px; height: 3px;
+      background: #fff;
+    }
+
+    section {
+      padding: 4rem 3rem;
+    }
+    .hero {
+      display: flex; flex-direction: row;
+      align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 2rem;
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero-text h1 {
+      font-size: 3rem; margin-bottom: 1rem;
+    }
+    .hero-text p {
+      color: #ccc; margin-bottom: 2rem;
+    }
+    .hero-text button {
+      padding: 0.8rem 2rem;
+      background: #ff9900; color: white;
+      border: none; border-radius: 8px;
+      cursor: pointer;
+    }
+    .hero-image {
+      flex: 1;
+    }
+    .hero-image img {
+      width: 100%; border-radius: 12px;
+    }
+
+    .menu, .about, .testimonials, .contact {
+      max-width: 1000px; margin: 0 auto;
+    }
+
+    .menu h2, .about h2, .testimonials h2, .contact h2 {
+      text-align: center; margin-bottom: 2rem; font-size: 2rem;
+    }
+
+    .menu-items {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .menu-item {
+      background: #1a1a1a; padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .menu-item img {
+      width: 100%; border-radius: 10px; margin-bottom: 1rem;
+    }
+
+    .about p {
+      text-align: center; max-width: 700px; margin: 0 auto;
+      color: #ccc;
+    }
+
+    .testimonial {
+      background: #1a1a1a;
+      padding: 1rem; border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .testimonial p { color: #ddd; }
+    .testimonial h4 { margin-top: 0.5rem; }
+
+    .contact form {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      background: #333; color: #fff;
+    }
+    .contact button {
+      background: #ff9900;
+      padding: 0.75rem; color: #fff;
+      border: none; border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a1a;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #1a1a1a;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 8px 0 0 8px;
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">FlavorFiesta.</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Savor the Taste of Authentic Flavors</h1>
+      <p>Experience gourmet dishes crafted with passion and tradition.</p>
+      <button>Order Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1606788075760-cb7b42d6e7f5?auto=format&fit=crop&w=800&q=80" alt="Dish">
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?pizza" alt="">
+        <h4>Italian Pizza</h4>
+        <p>Classic hand-tossed pizza with fresh mozzarella and basil.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?burger" alt="">
+        <h4>Gourmet Burger</h4>
+        <p>Juicy beef patty with house-made sauces and toppings.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?salad" alt="">
+        <h4>Fresh Salad</h4>
+        <p>Organic greens with vinaigrette and seasonal veggies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At FlavorFiesta, we bring global flavors to your plate with heart and heritage. Every dish tells a story of culinary excellence.</p>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What Customers Say</h2>
+    <div class="testimonial">
+      <p>"Best food experience ever! The flavors were out of this world."</p>
+      <h4>- Maria G.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Cozy vibe, fantastic staff, and unforgettable dishes."</p>
+      <h4>- Jason L.</h4>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 DebCodes. All rights reserved.
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
